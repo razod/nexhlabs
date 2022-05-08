@@ -18,7 +18,7 @@ app.use('/api/auth', auth);
 app.use('/api/users', users);
 
 app.get('/', (req, res) => {
-   res.json({ "api-version": cfg.apiversion });
+   res.json({ "api_version": cfg.apiversion});
 });
 
 app.listen(cfg.port, () => console.log(`Nexhlabs-API running on http://localhost:${cfg.port}`));

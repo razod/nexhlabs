@@ -3,8 +3,8 @@ const mongoose = require('mongoose');
 const cfg = require('./config.json');
 
 // Routes
-const auth = require('./routes/api/auth');
-const users = require('./routes/api/users');
+const auth = require('./routes/users/auth');
+const users = require('./routes/users/users');
 
 const app = express();
 app.use(express.json());

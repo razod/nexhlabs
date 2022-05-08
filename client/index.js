@@ -1,5 +1,6 @@
 const express = require('express');
 var path = require('path');
+const cfg = require('./config.json');
 
 var app = express();
 app.use('/public', express.static(__dirname + '/public'));
@@ -10,4 +11,4 @@ app.get('/', (req, res) => {
     res.render('index.hbs');
 })
 
-app.listen(1111, () => console.log("Nexhlabs-Client running on http://localhost:1111"));
+app.listen(cfg.port, () => console.log(`Nexhlabs-Client running on http://localhost:${cfg.port}`));

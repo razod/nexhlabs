@@ -1,0 +1,6 @@
+{
+    "port": PORT_NUMBER,
+    "secret": RANDOM_SECRET,
+    "mongoDB": MONGO_URI_CODE,
+    "apiversion": API_VERSION
+}

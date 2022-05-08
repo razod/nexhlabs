@@ -76,7 +76,7 @@ ul {
 }
 
 .signup {
-	background:linear-gradient(to bottom, #d56bdb 5%, #e6a978 100%);
+	/* background:linear-gradient(to bottom, #d56bdb 5%, #e6a978 100%); */
 	background-color:#d56bdb;
 	border-radius:8px;
 	color:#ffffff !important;
@@ -87,8 +87,19 @@ ul {
 }
 .signup:hover {
     transition: 0.5s;
-	background:linear-gradient(to bottom, #e6a978 5%, #d56bdb 100%);
-	background-color:#e6a978;
+	/* background:linear-gradient(to bottom, #e6a978 5%, #d56bdb 100%); */
+	background-color:#bd5fc2;
+}
+
+p .signup {
+	/* background:linear-gradient(to bottom, #d56bdb 5%, #e6a978 100%); */
+	background-color:#bd5fc2;
+	border-radius:8px;
+	color:#ffffff !important;
+	font-size:20px;
+	font-weight:bold;
+	padding:10px 24px;
+	text-decoration:none;
 }
 
 .header { 

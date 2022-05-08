@@ -7,7 +7,7 @@ const jwt = require('jsonwebtoken');
 
 
 
-// @route     POST api/users
+// @route     POST /users
 // @desc      Register new nexhlab account
 // @access    Public
 router.post('/', (req, res) => {

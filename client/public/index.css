@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600&display=swap');
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -5,11 +7,11 @@
 }
 
 body {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-family: "Inter", 'Open Sans', 'Helvetica Neue', sans-serif;
     font-size: 16px;
     line-height: 1.5;
     color: #ffffff;
-    background-color: #2e2e2e;
+    background-color: #ffffff;
 }
 
 img {
@@ -31,24 +33,30 @@ ul {
 }
 
 .navbar {
-    background-color: #3a3a3a;
-    color: #fff;
+    background-color: #ffffff;
+    color: rgb(112, 112, 112);
     height: 60px;
 }
 
 .navbar .logo {
+    color: #d56bdb;
     font-size: x-large;
     font-weight: bold;
 } 
 
+.navbar .logo:hover {
+    color: #d56bdb;
+    transition: 0.3s;
+} 
+
 .navbar a {
-    color: #fff;
+    color: rgb(112, 112, 112);
     text-decoration: none;
     font-size: 16px;
 }
 
-.navbar a:hover {
-    color: #a5a5a5;
+.navbar a.nor:hover {
+    color: #d56bdb;
     transition: 0.3s;
 }
 
@@ -67,6 +75,53 @@ ul {
     margin-left: 20px;
 }
 
-.navbar ul li .active {
-    text-decoration: underline;
+.signup {
+	background:linear-gradient(to bottom, #d56bdb 5%, #e6a978 100%);
+	background-color:#d56bdb;
+	border-radius:8px;
+	color:#ffffff !important;
+	font-size:20px;
+	font-weight:bold;
+	padding:10px 24px;
+	text-decoration:none;
+}
+.signup:hover {
+    transition: 0.5s;
+	background:linear-gradient(to bottom, #e6a978 5%, #d56bdb 100%);
+	background-color:#e6a978;
+}
+
+.header { 
+    background-color: #d56bdb;
+    color: #fff;
+    min-height: 400px;
+    text-align: center;
+}
+
+.header h1 {
+    margin-top: 125px;
+    font-size: 3rem;
+    font-weight: bold;
+    line-height: 1.2;
+}
+
+/* .header img {
+    max-width: 400px;
+    padding: 30px;
+} */
+
+.header .container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+@media(max-width: 768px) {
+    .header .container {
+        flex-direction: column;
+        padding-top: 30px;
+        text-align: center;
+    }
+
 }

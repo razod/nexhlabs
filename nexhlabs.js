@@ -1,2 +1,2 @@
-require("./client/index");
 require("./api/index");
+require("./client/index");

@@ -14,8 +14,8 @@ mongoose
     .then(() => console.log('Nexhlabs-API Connected to database!'))
     .catch(err => console.log(err));
 
-app.use('/api/auth', auth); 
-app.use('/api/users', users);
+app.use('/auth', auth); 
+app.use('/users', users);
 
 app.get('/', (req, res) => {
    res.json({ "api_version": cfg.apiversion});

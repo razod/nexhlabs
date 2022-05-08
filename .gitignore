@@ -4,5 +4,6 @@ client/package-lock.json
 api/node_modules
 api/package-lock.json
 
-# CONFIG
+# CONFIGS
 api/config.json
+client/config.json

@@ -1,0 +1,19 @@
+{
+  "name": "nexhlabs",
+  "version": "0.0.1",
+  "description": "Nexhlabs will be making discord bots, websites, and more.",
+  "main": "index.js",
+  "scripts": {
+    "start": "node nexhlabs.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/razod/nexhlabs.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/razod/nexhlabs/issues"
+  },
+  "homepage": "https://github.com/razod/nexhlabs#readme"
+}

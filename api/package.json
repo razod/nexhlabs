@@ -1,0 +1,14 @@
+{
+  "name": "nexhlabs-api",
+  "version": "0.0.1",
+  "description": "api for nexhlabs",
+  "main": "index.js",
+  "scripts": {
+    "test": "node index.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.1"
+  }
+}

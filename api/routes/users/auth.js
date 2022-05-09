@@ -32,7 +32,6 @@ router.post('/', (req, res) => {
                     { expiresIn: 99999 },
                     (err, token) => {
                      if(err) throw err;
-                    res.setHeader("x-auth-token", token)
                      res.json({
                          token: token,
                          user: {

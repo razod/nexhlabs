@@ -11,4 +11,6 @@ app.get('/', (req, res) => {
     res.render('index.hbs');
 });
 
+app.use('/auth', require("./routes/auth"));
+
 app.listen(cfg.port, () => console.log(`Nexhlabs-Client running on http://localhost:${cfg.port}`));

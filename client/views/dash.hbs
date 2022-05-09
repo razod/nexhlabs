@@ -1,0 +1,9 @@
+{{#if token}}
+<div class="auth">
+  <h1>You're authenticated!</h1> <a href="../logout">Logout</a>
+</div>
+{{else}}
+        <script type="text/javascript">
+            window.location.href = "../"
+        </script>
+{{/if}}

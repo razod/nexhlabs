@@ -9,7 +9,7 @@ const fetch = require("node-fetch");
 router.get('/login', async (req, res) => {
     const { email, password } = req.query;
      if(!email || !password) {
-         // res.redirect("../register");
+         res.redirect("../register");
      }
      var body = {
          "email": email,
@@ -20,9 +20,13 @@ router.get('/login', async (req, res) => {
         body: JSON.stringify(body),
         headers: {'Content-Type': 'application/json'}
      });
-     const data = await login.json();
+     var data = await login.json();
      if(data.msg) {
-         return res.send(data.msg);
+        res.cookie("msg", data.msg);
+         return res.redirect("../login");
+     } else {
+        res.cookie("x-auth-token", data.token);
+        return res.redirect("../dash");
      }
     // console.log("EMAIL: " + email);
     // console.log("PASS: " + password);

@@ -1,8 +1,10 @@
 const express = require('express');
 var path = require('path');
 const cfg = require('./config.json');
+const cookieParser = require("cookie-parser");
 
 var app = express();
+app.use(cookieParser());
 app.use('/public', express.static(__dirname + '/public'));
 app.set('views', path.join(__dirname, '/views'));
 app.set('view engine', 'hbs');
@@ -10,11 +12,31 @@ app.set('view engine', 'hbs');
 app.get('/', (req, res) => {
     res.render('index.hbs');
 });
-// app.get('/', (req, res) => {
-//     res.render('login.hbs', { 
-//         "API": cfg.api
-//     });
-// });
+app.get('/login', (req, res) => {
+    if(req.cookies["msg"]) {
+        res.render('login.hbs', { 
+             "msg": req.cookies["msg"],
+             "login": cfg.login
+          });
+        return res.clearCookie("msg");
+     }
+     res.render('login.hbs', { 
+        "login": cfg.login
+     });
+ });
+
+app.get("/logout", (req, res) => {
+    res.clearCookie("x-auth-token");
+    return res.redirect("../");
+});
+
+app.get("/dash", (req, res) => {
+    var token = req.cookies["x-auth-token"];
+    if(!token) res.redirect("../login");
+    res.render("dash", {
+        "token": token
+    })
+});
 
 app.use('/auth', require("./routes/auth"));
 

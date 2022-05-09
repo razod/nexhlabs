@@ -9,6 +9,6 @@ app.set('view engine', 'hbs');
 
 app.get('/', (req, res) => {
     res.render('index.hbs');
-})
+});
 
 app.listen(cfg.port, () => console.log(`Nexhlabs-Client running on http://localhost:${cfg.port}`));

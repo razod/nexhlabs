@@ -1,3 +1,4 @@
 {
-    "port": PORT_NUMBER
+    "port": PORT_NUMBER,
+    "api": API_ADDRESS
 }

@@ -2,5 +2,6 @@
     "port": PORT_NUMBER,
     "api": API_URL,
     "login": "CLIENT_URL/auth/login",
-    "register": "CLIENT_URL/auth/register"
+    "register": "CLIENT_URL/auth/register",
+    "secret": "SAME_SECRET_AS_API"
 }

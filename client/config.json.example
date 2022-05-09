@@ -1,4 +1,6 @@
 {
     "port": PORT_NUMBER,
-    "api": API_ADDRESS
+    "api": API_URL,
+    "login": "CLIENT_URL/auth/login",
+    "register": "CLIENT_URL/auth/register"
 }

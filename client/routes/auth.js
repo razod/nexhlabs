@@ -2,7 +2,6 @@ const express = require('express');
 const router = express.Router();
 const cfg = require('../config.json');
 const fetch = require("node-fetch");
-const { response } = require('express');
 
 // @route     GET /auth/login
 // @desc      Authenticate User

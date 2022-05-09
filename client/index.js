@@ -11,7 +11,11 @@ app.set('views', path.join(__dirname, '/views'));
 app.set('view engine', 'hbs');
 
 app.get('/', (req, res) => {
-    res.render('index.hbs');
+    var token = req.cookies["x-auth-token"];
+    if(!token) return res.render('index.hbs');
+    return res.render('index.hbs', {
+        "token": token
+    });
 });
 app.get('/login', (req, res) => {
     if(req.cookies["x-auth-token"]) return res.redirect("../dash");

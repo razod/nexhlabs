@@ -15,6 +15,17 @@
                 {{!-- <li>
                     <a class="nor" href="/">Home</a>
                 </li> --}}
+                {{#if token}}
+                <li>
+                    <a class="nor" href="#">Products</a>
+                </li>
+                <li>
+                    <a class="nor" href="./logout">Logout</a>
+                </li>
+                <li>
+                    <a href="./dash" class="signup">Dashboard</a>
+                </li>
+                {{else}}
                 <li>
                     <a class="nor" href="#">Products</a>
                 </li>
@@ -22,8 +33,9 @@
                     <a class="nor" href="./login">Log In</a>
                 </li>
                 <li>
-                    <a href="#" class="signup">Sign Up</a>
+                    <a href="./register" class="signup">Sign Up</a>
                 </li>
+                {{/if}}
             </ul>
         </div>
     </nav>
@@ -36,7 +48,11 @@
                     Creating a new perspective.
                 </p>
                 <br>
-                <p><a href="#" class="signup">Sign up with email</a></p>
+            {{#if token}}
+                <p><a href="./dash" class="signup">Visit the dashboard</a></p>
+            {{else}}
+                <p><a href="./register" class="signup">Sign up with email</a></p>
+            {{/if}}
             </div>
         </div>
     </header>

@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 const cfg = require('../config.json');
 const fetch = require("node-fetch");
+const jwt = require('jsonwebtoken');
 
 // @route     GET /auth/login
 // @desc      Authenticate User
@@ -68,8 +69,9 @@ router.get('/data', async (req, res) => {
      });
      var data = await login.json();
 
-     console.log({ data })
-     res.send(data);
+     var userCookie = jwt.sign({ user: data.name, email: data.email }, cfg.secret, { expiresIn: 99999 });
+     res.cookie("user", userCookie);
+     return res.redirect("../dash");
 });
 
 module.exports = router;

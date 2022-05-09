@@ -1,6 +1,9 @@
 {{#if token}}
 <div class="auth">
   <h1>You're authenticated!</h1> <a href="../logout">Logout</a> <a href="../">Home</a>
+  <br>
+  <h1>Username: {{ user }}</h1>
+  <h1>Email: {{ email }}</h1>
 </div>
 {{else}}
         <script type="text/javascript">

@@ -1,6 +1,7 @@
 const express = require('express');
 var path = require('path');
 const cfg = require('./config.json');
+const jwt = require('jsonwebtoken');
 const cookieParser = require("cookie-parser");
 
 var app = express();
@@ -48,9 +49,19 @@ app.get("/logout", (req, res) => {
 app.get("/dash", (req, res) => {
     var token = req.cookies["x-auth-token"];
     if(!token) return res.redirect("../login");
+    var user = req.cookies["user"];
+    if(!user) return res.redirect("../auth/data");
+    try {
+        const decoded = jwt.verify(user, cfg.secret);
+        user = decoded;
     res.render("dash", {
-        "token": token
+        "token": token,
+        "user": user.user,
+        "email": user.email
     })
+    } catch(e) {
+        res.redirect("../login");
+    }
 });
 
 app.use('/auth', require("./routes/auth"));

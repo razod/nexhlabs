@@ -13,6 +13,7 @@ app.get('/', (req, res) => {
     res.render('index.hbs');
 });
 app.get('/login', (req, res) => {
+    if(req.cookies["x-auth-token"]) return res.redirect("../dash");
     if(req.cookies["msg"]) {
         res.render('login.hbs', { 
              "msg": req.cookies["msg"],
@@ -32,7 +33,7 @@ app.get("/logout", (req, res) => {
 
 app.get("/dash", (req, res) => {
     var token = req.cookies["x-auth-token"];
-    if(!token) res.redirect("../login");
+    if(!token) return res.redirect("../login");
     res.render("dash", {
         "token": token
     })

@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 const cfg = require('../config.json');
 const fetch = require("node-fetch");
+const { response } = require('express');
 
 // @route     GET /auth/login
 // @desc      Authenticate User
@@ -56,6 +57,20 @@ router.get('/register', async (req, res) => {
         res.cookie("x-auth-token", data.token);
         return res.redirect("../dash");
      }
+});
+
+router.get('/data', async (req, res) => {
+    var token = req.cookies["x-auth-token"];
+    if(!token) return res.redirect("../login");
+
+    var login = await fetch.default(cfg.api + "auth/user", { 
+        method: 'get',
+        headers: {'x-auth-token': `${token}`, 'Content-Type': 'application/json'}
+     });
+     var data = await login.json();
+
+     console.log({ data })
+     res.send(data);
 });
 
 module.exports = router;

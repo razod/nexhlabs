@@ -28,9 +28,34 @@ router.get('/login', async (req, res) => {
         res.cookie("x-auth-token", data.token);
         return res.redirect("../dash");
      }
-    // console.log("EMAIL: " + email);
-    // console.log("PASS: " + password);
-    // res.send("Test")
+});
+
+// @route     GET /auth/login
+// @desc      Authenticate User
+// @access    Public
+router.get('/register', async (req, res) => {
+    const { username, email, password } = req.query;
+     if(!username || !email || !password) {
+         res.redirect("../register");
+     }
+     var body = {
+         "name": username,
+         "email": email,
+         "password": password
+     }
+     var login = await fetch.default(cfg.api + "users", { 
+        method: 'post',
+        body: JSON.stringify(body),
+        headers: {'Content-Type': 'application/json'}
+     });
+     var data = await login.json();
+     if(data.msg) {
+        res.cookie("msg", data.msg);
+         return res.redirect("../register");
+     } else {
+        res.cookie("x-auth-token", data.token);
+        return res.redirect("../dash");
+     }
 });
 
 module.exports = router;

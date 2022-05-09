@@ -26,6 +26,20 @@ app.get('/login', (req, res) => {
      });
  });
 
+ app.get('/register', (req, res) => {
+    if(req.cookies["x-auth-token"]) return res.redirect("../dash");
+    if(req.cookies["msg"]) {
+        res.render('register.hbs', { 
+             "msg": req.cookies["msg"],
+             "register": cfg.register
+          });
+        return res.clearCookie("msg");
+     }
+     res.render('register.hbs', { 
+        "register": cfg.register
+     });
+ });
+
 app.get("/logout", (req, res) => {
     res.clearCookie("x-auth-token");
     return res.redirect("../");

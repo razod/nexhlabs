@@ -1,10 +1,59 @@
-{{#if msg}}
-<div class="error">
-    {{ msg }}
-</div>
-{{/if}}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nexhlabs | Register</title>
+    <link rel="stylesheet" href="public/forms.css">
+    <link rel="stylesheet" href="public/index.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <a href="./"><div class="logo">Nexhlabs.</div></a>
+            <ul class="nav">
+                <li>
+                    <a class="nor" href="#">Products</a>
+                </li>
+                <li>
+                    <a href="./login" class="signup">Log In</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    {{#if msg}}
+        <hgroup>
+        <div class="error">
+            <h1>{{ msg }}</h1>
+        </div>
+        </hgroup>
+        {{else}}
+    <hgroup>
+        <div class="error">
+            <h1>Nexhlab</h1>
+        </div>
+        </hgroup>
+    {{/if}}
 <form action="{{ register }}" method="get">
-<p>Characters &, /, <, >, (, and, ) are not allowed.</p>
+    <div class="group">
+    <input type="txt" id="username" name="username" pattern="[^&()/><\][\\\x22,;|]+" required><span class="highlight"></span><span class="bar"></span>
+        <label>Name</label>
+    </div>
+    <div class="group">
+        <input type="email" id="email" name="email" pattern="[^&()/><\][\\\x22,;|]+" required><span class="highlight"></span><span class="bar"></span>
+        <label>Email</label>
+    </div>
+        <div class="group">
+        <input type="password" id="password" name="password" pattern="[^&()/><\][\\\x22,;|]+" required><span class="highlight"></span><span class="bar"></span>
+        <label>Password</label>
+    </div>
+     <button type="submit" class="button buttonPink">Register</button>
+</form>
+    
+
+
+{{!-- <form action="{{ register }}" method="get">
     <label for="username"><p>Username</p></label>
     <input type="txt" id="username" name="username" pattern="[^&()/><\][\\\x22,;|]+" required>
     <label for="email"><p>Email</p></label>
@@ -12,4 +61,8 @@
     <label for="password"><p>Password</p></label>
     <input type="password" id="password" name="password" pattern="[^&()/><\][\\\x22,;|]+" required>
     <button type="submit">Button</button>
-</form>
+</form> --}}
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="public/forms.js"></script>
+</html>

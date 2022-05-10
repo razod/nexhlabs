@@ -52,7 +52,7 @@ router.get('/register', async (req, res) => {
      var data = await login.json();
      if(data.msg) {
         res.cookie("msg", data.msg);
-         return res.redirect("../register");
+        return res.redirect("../register");
      } else {
         res.cookie("x-auth-token", data.token);
         return res.redirect("../dash");

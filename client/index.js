@@ -17,6 +17,15 @@ app.get('/', (req, res) => {
         "token": token
     });
 });
+
+app.get('/terms', (req, res) => {
+    var token = req.cookies["x-auth-token"];
+    if(!token) return res.render('terms.hbs');
+    return res.render('terms.hbs', {
+        "token": token
+    });
+});
+
 app.get('/login', (req, res) => {
     if(req.cookies["x-auth-token"]) return res.redirect("../dash");
     if(req.cookies["msg"]) {

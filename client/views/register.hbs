@@ -30,8 +30,8 @@
         </hgroup>
         {{else}}
     <hgroup>
-        <div class="error">
-            <h1>Nexhlab</h1>
+        <div>
+            <h1>Register</h1>
         </div>
         </hgroup>
     {{/if}}
@@ -44,11 +44,14 @@
         <input type="email" id="email" name="email" pattern="[^&()/><\][\\\x22,;|]+" required><span class="highlight"></span><span class="bar"></span>
         <label>Email</label>
     </div>
-        <div class="group">
+    <div class="group-password">
         <input type="password" id="password" name="password" pattern="[^&()/><\][\\\x22,;|]+" required><span class="highlight"></span><span class="bar"></span>
         <label>Password</label>
     </div>
-     <button type="submit" class="button buttonPink">Register</button>
+    <div class="terms">
+        <p>You agree to the <a href="./terms">terms</a></p>
+    </div>
+     <button type="submit" class="button buttonPink">Sign up</button>
 </form>
     
 

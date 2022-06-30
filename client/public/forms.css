@@ -37,7 +37,12 @@ form {
 
 .group { 
 	position: relative; 
-	margin-bottom: 45px; 
+	margin-bottom: 40px; 
+}
+
+.group-password { 
+	position: relative; 
+	margin-bottom: 22px; 
 }
 
 input {
@@ -141,3 +146,12 @@ input:focus ~ .highlight {
   
   .buttonBlue:hover { background: #bd5fc2; }
 
+.error {
+	background-color: #f89efd;
+	width: fit-content;
+}
+
+a {
+	text-decoration: none;
+	color: #d56bdb;
+}

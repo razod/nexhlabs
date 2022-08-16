@@ -7,6 +7,7 @@ const jwt = require('jsonwebtoken');
 const auth = require('../../middleware/auth');
 
 
+
 // @route     POST /auth
 // @desc      Authenticate User
 // @access    Public

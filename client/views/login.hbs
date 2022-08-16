@@ -37,11 +37,11 @@
     {{/if}}
 <form action="{{ login }}" method="get">
     <div class="group">
-        <input type="email" id="email" name="email" pattern="[^&()/><\][\\\x22,;|]+" required><span class="highlight"></span><span class="bar"></span>
+        <input type="email" autocomplete="off" id="email" name="email" pattern="[^&()/><\][\\\x22,;|]+" required><span class="highlight"></span><span class="bar"></span>
         <label>Email</label>
     </div>
         <div class="group">
-        <input type="password" id="password" name="password" pattern="[^&()/><\][\\\x22,;|]+" required><span class="highlight"></span><span class="bar"></span>
+        <input type="password" autocomplete="off" id="password" name="password" pattern="[^&()/><\][\\\x22,;|]+" required><span class="highlight"></span><span class="bar"></span>
         <label>Password</label>
     </div>
      <button type="submit" class="button buttonPink">Login</button>

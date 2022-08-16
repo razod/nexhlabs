@@ -59,6 +59,36 @@ router.get('/register', async (req, res) => {
      }
 });
 
+// @route     GET /auth/cp
+// @desc      Authenticate User
+// @access    Public
+router.get('/cp', async (req, res) => {
+    const { oldpass, newpass } = req.query;
+     if(!oldpass || !oldpass) {
+         res.redirect("../register");
+     }
+     var token = req.cookies["x-auth-token"];
+     if(!token) return res.redirect("../login");
+     var body = {
+         "oldpass": oldpass,
+         "newpass": newpass
+     }
+     var login = await fetch.default(cfg.api + "changepass", { 
+        method: 'post',
+        body: JSON.stringify(body),
+        headers: {'Content-Type': 'application/json'}
+     });
+     var data = await login.json();
+     if(data.msg) {
+        res.cookie("msg", data.msg);
+        return res.redirect("../dash/changepass");
+     } else {
+        res.clearCookie("x-auth-token");
+        return res.redirect("../login");
+     }
+});
+
+
 router.get('/data', async (req, res) => {
     var token = req.cookies["x-auth-token"];
     if(!token) return res.redirect("../login");

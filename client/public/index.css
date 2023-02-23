@@ -103,12 +103,12 @@ p .signup {
 .header { 
     background-color: #d56bdb;
     color: #fff;
-    min-height: 400px;
+    min-height: 600px;
     text-align: center;
 }
 
 .header h1 {
-    margin-top: 125px;
+    margin-top: 225px;
     font-size: 3rem;
     font-weight: bold;
     line-height: 1.2;
